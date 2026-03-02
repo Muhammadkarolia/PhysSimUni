@@ -1,6 +1,6 @@
 export const G = 1;         // scaled gravitational constant
 export const EPSILON = 5;   // softening constant
-export const SCALE = 0.1; // Scaling const
+export const SCALE = 0.1;   // Scaling const
 
 export function computeForces(bodies) {
     for (let i = 0; i < bodies.length; i++) {

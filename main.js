@@ -52,21 +52,23 @@ const velYInput = document.getElementById("velY");
 const addBodyBtn = document.getElementById("addBody");
 
 addBodyBtn.addEventListener("click", () => {
-    const x = parseFloat(posXInput.value);
-    const y = parseFloat(posYInput.value);
-    const vx = parseFloat(velXInput.value);
-    const vy = parseFloat(velYInput.value);
-    const mass = parseFloat(massInput.value);
+    if(creationMode == "precise") {
+        const x = parseFloat(posXInput.value);
+        const y = parseFloat(posYInput.value);
+        const vx = parseFloat(velXInput.value);
+        const vy = parseFloat(velYInput.value);
+        const mass = parseFloat(massInput.value);
 
-    if (isNaN(x) || isNaN(y) || isNaN(vx) || isNaN(vy) || isNaN(mass)) {
-        alert("Please enter valid numbers.");
-        return;
+        if (isNaN(x) || isNaN(y) || isNaN(vx) || isNaN(vy) || isNaN(mass)) {
+            alert("Please enter valid numbers.");
+            return;
+        }
+
+        const newBody = new Body(x, y, vx, vy, mass);
+        bodies.push(newBody);
+
+        // previewBody = null;
     }
-
-    const newBody = new Body(x, y, vx, vy, mass);
-    bodies.push(newBody);
-
-    // previewBody = null;
 });
 
 [posXInput, posYInput, velXInput, velYInput, massInput]
