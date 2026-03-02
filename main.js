@@ -66,7 +66,7 @@ addBodyBtn.addEventListener("click", () => {
     const newBody = new Body(x, y, vx, vy, mass);
     bodies.push(newBody);
 
-    previewBody = null;
+    // previewBody = null;
 });
 
 [posXInput, posYInput, velXInput, velYInput, massInput]
