@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>2D N-Body Gravity Simulation</title>
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body>
+    <h1>2D N-Body Gravity Simulation</h1>
+
+    <div class="controls">
+
+        <h3>Creation Mode</h3>
+
+        <label>
+            <input type="radio" name="creationMode" value="drag" checked>
+            Drag Mode
+        </label>
+
+        <label>
+            <input type="radio" name="creationMode" value="precise">
+            Precise Mode
+        </label>
+
+        <button id="start">Start</button>
+        <button id="pause">Pause</button>
+        <button id="reset">Reset</button>
+
+        <label>X:
+        <input type="number" id="posX" value="400">
+        </label>
+
+        <label>Y:
+        <input type="number" id="posY" value="300">
+        </label>
+                
+        <label>Vx:
+        <input type="number" id="velX" value="10">
+        </label>
+
+        <label>Vy:
+        <input type="number" id="velY" value="-10">
+        </label>
+
+        <button id="addBody">Add Body</button>
+
+
+        <label>Mass:
+        <input type="range" id="massSlider" min="5" max="200" value="20">
+        <input type="number" id="massInput" min="5" max="200" value="20" style="width:50px;">
+        </label>
+        
+        <label>
+            Show Velocity
+            <input type="checkbox" id="toggleVelocity" checked>
+        </label>
+
+        <label>
+            Show Force
+            <input type="checkbox" id="toggleForce" checked>
+        </label>
+    </div>
+
+    <canvas id="canvas" width="1000" height="700" style="background-color: black;"></canvas>
+
+    <script type="module" src="main.js"></script>
+</body>
+</html>
