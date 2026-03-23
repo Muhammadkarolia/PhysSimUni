@@ -12,7 +12,7 @@ body { /* Im pants with css */
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
 
     /* center items horizontally within their grid cell when needed */
-    justify-items: center;
+
     margin: 0;
 }
 
@@ -43,6 +43,9 @@ h3 {
     text-align: center;
 }
 
+#addBody{
+    display: "none";
+}
 .creationRadio {
     display: flex;
     align-items: center;
@@ -65,7 +68,7 @@ h3 {
 
 button {
     padding: 10px 20px;
-    margin: 5px;
+    margin: 2px;
     font-size: 1em;
     color: white;
     background: #555;
@@ -75,8 +78,49 @@ button {
 
 }
 
-#addBody{
-    display: "none";
+.buttonRow {
+    display: flex;
+    justify-content: space-between;
+}
+
+#reset {
+    margin-top: auto;
+}
+
+#start, #pause {
+    width: 110px;
+    margin-bottom: 10px;
+}
+
+input[type="number"]{
+    width: 75%;
+    padding: 5px;
+    margin: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+input[type="range"] { /* Slider styles */
+    appearance: none;
+    width: 100%;
+    height: 15px;
+    border-radius: 5px;  
+    background: #2697b9;
+    outline: none;
+    transition: .2s;
+    transition: opacity .2s;
+}
+
+#massInput {
+    width: 25px;
+    padding-left: 5px;
+    padding-right: 0px;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
 
 /* Controls stuff End--------------------------------- */
@@ -92,17 +136,9 @@ canvas {
     background: black;
     border-color: white;
     border-width: 1px;
-    width: 1500px;
-    height: 850px;
+    width: 99%;
+    height: calc(100vh - 100px);
     grid-row: 2;
     grid-column: 2;
     justify-self: start;
-}
-
-
-input[type="radio"]::before {
-  /* ...existing styles */
-
-  transform-origin: bottom left;
-  clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
 }

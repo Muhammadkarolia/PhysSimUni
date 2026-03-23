@@ -2,7 +2,10 @@ import { Body } from "./body.js";
 import { computeForces } from "./physics.js";
 
 const canvas = document.getElementById("canvas");
+canvas.width = canvas.clientWidth;
+canvas.height = canvas.clientHeight;
 const ctx = canvas.getContext("2d");
+
 
 // Creation mode stuff
 let creationMode = "drag";
@@ -16,6 +19,7 @@ const massInput = document.getElementById("massInput");
 // Update input when slider moves
 massSlider.addEventListener("input", () => {
     massInput.value = massSlider.value;
+    updatePreviewBody();
 });
 
 // Update slider when input changes
@@ -28,6 +32,7 @@ massInput.addEventListener("input", () => {
 
     massSlider.value = val;
     massInput.value = val;
+    updatePreviewBody();
 });
 // Mass Stuff End
 // ==========================================================================
@@ -252,15 +257,24 @@ canvas.addEventListener("mousedown", (e) => {
     if (creationMode !== "drag") return;
 
     const rect = canvas.getBoundingClientRect();
-    dragStartX = e.clientX - rect.left;
-    dragStartY = e.clientY - rect.top;
+
+    const scaleX = canvas.width / rect.width;
+    const scaleY = canvas.height / rect.height;
+
+    dragStartX = (e.clientX - rect.left) * scaleX;
+    dragStartY = (e.clientY - rect.top) * scaleY;
+
     isDragging = true;
 });
 
 canvas.addEventListener("mousemove", (e) => {
     const rect = canvas.getBoundingClientRect();
-    mouseX = e.clientX - rect.left;
-    mouseY = e.clientY - rect.top;
+
+    const scaleX = canvas.width / rect.width;
+    const scaleY = canvas.height / rect.height;
+
+    mouseX = (e.clientX - rect.left) * scaleX;
+    mouseY = (e.clientY - rect.top) * scaleY;
 });
 
 canvas.addEventListener("mouseup", () => {

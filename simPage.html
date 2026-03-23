@@ -22,10 +22,6 @@
             Precise Mode
         </label>
 
-        <button id="start">Start</button>
-        <button id="pause">Pause</button>
-        <button id="reset">Reset</button>
-
         <label class="inputForAddBody">X:
         <input type="number" id="posX" value="400">
         </label>
@@ -46,8 +42,8 @@
 
 
         <label>Mass:
-        <input type="range" id="massSlider" min="5" max="200" value="20">
-        <input type="number" id="massInput" min="5" max="200" value="20" style="width:50px;">
+        <input type="range" id="massSlider" min="1" max="200" value="20">
+        <input type="number" id="massInput" min="1" max="200" value="20">
         </label>
         
         <label>
@@ -59,6 +55,12 @@
             Show Force
             <input type="checkbox" id="toggleForce" checked>
         </label>
+
+        <button id="reset">Reset</button>
+        <div class="buttonRow">
+            <button id="start">Start</button>
+            <button id="pause">Pause</button>
+        </div>
     </div>
 
     <canvas id="canvas"></canvas>
