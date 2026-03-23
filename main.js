@@ -40,8 +40,6 @@ document.getElementById("reset").onclick = () => {
     bodies = [];
 };
 
-
-
 // ==========================================================================
 // Pos using Precice values
 let previewBody = null;
@@ -49,7 +47,11 @@ const posXInput = document.getElementById("posX");
 const posYInput = document.getElementById("posY");
 const velXInput = document.getElementById("velX");
 const velYInput = document.getElementById("velY");
+const inputForAddBody = document.getElementsByClassName("inputForAddBody");
 const addBodyBtn = document.getElementById("addBody");
+for(var i = 0; i < inputForAddBody.length; i++) { // Hide by default since drag mode is checked
+    inputForAddBody[i].style.display = "none";
+}
 
 addBodyBtn.addEventListener("click", () => {
     if(creationMode == "precise") {
@@ -80,6 +82,15 @@ modeRadios.forEach(radio => {
     radio.addEventListener("change", () => {
         console.log(radio.value)
         creationMode = radio.value;
+        if (creationMode === "drag") {
+            for(var i = 0; i < inputForAddBody.length; i++) {
+                inputForAddBody[i].style.display = "none";
+            }
+        } else {
+            for(var i = 0; i < inputForAddBody.length; i++) {
+                inputForAddBody[i].style.display = "block";
+            }
+        }
         updatePreviewBody();
     });
 });
@@ -280,3 +291,4 @@ canvas.addEventListener("mouseup", () => {
 
     bodies.push(newBody);
 });
+

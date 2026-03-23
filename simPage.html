@@ -12,12 +12,12 @@
 
         <h3>Creation Mode</h3>
 
-        <label>
+        <label class="creationRadio" id="dragModeLabel">
             <input type="radio" name="creationMode" value="drag" checked>
             Drag Mode
         </label>
 
-        <label>
+        <label class="creationRadio" id="preciseModeLabel">
             <input type="radio" name="creationMode" value="precise">
             Precise Mode
         </label>
@@ -26,23 +26,23 @@
         <button id="pause">Pause</button>
         <button id="reset">Reset</button>
 
-        <label>X:
+        <label class="inputForAddBody">X:
         <input type="number" id="posX" value="400">
         </label>
 
-        <label>Y:
+        <label class="inputForAddBody">Y:
         <input type="number" id="posY" value="300">
         </label>
                 
-        <label>Vx:
+        <label class="inputForAddBody">Vx:
         <input type="number" id="velX" value="10">
         </label>
 
-        <label>Vy:
+        <label class="inputForAddBody">Vy:
         <input type="number" id="velY" value="-10">
         </label>
 
-        <button id="addBody">Add Body</button>
+        <button class="inputForAddBody" id="addBody">Add Body </button>
 
 
         <label>Mass:
