@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>2D N-Body Gravity Simulation</title>
+    <link rel="stylesheet" href="styleSimPage.css">
+</head>
+<body>
+    <h1>2D N-Body Gravity Simulation</h1>
+
+    <div class="controls">
+
+        <h3>Creation Mode</h3>
+
+        <label class="creationRadio" id="dragModeLabel">
+            <input type="radio" name="creationMode" value="drag" checked>
+            Drag Mode
+        </label>
+
+        <label class="creationRadio" id="preciseModeLabel">
+            <input type="radio" name="creationMode" value="precise">
+            Precise Mode
+        </label>
+
+        <label class="inputForAddBody">X:&nbsp&nbsp
+        <input type="number" id="posX" value="400">
+        </label>
+
+        <label class="inputForAddBody">Y:&nbsp&nbsp
+        <input type="number" id="posY" value="300">
+        </label>
+                
+        <label class="inputForAddBody">Vx:
+        <input type="number" id="velX" value="10">
+        </label>
+
+        <label class="inputForAddBody">Vy:
+        <input type="number" id="velY" value="-10">
+        </label>
+
+        <button class="inputForAddBody" id="addBody">Add Body </button>
+
+
+        <label>Mass:
+            <div class="massStuff">
+                <input type="number" id="massInput" min="1" max="200" value="20">
+                <input type="range" id="massSlider" min="1" max="200" value="20">
+            </div>
+        </label>
+
+        <div class="numBodiesContainer">
+            <label class="numBodies">Number of Bodies:&nbsp&nbsp <span id="numBodiesValue">0</span></label>
+        </div>
+
+
+        <button id="reset">Reset</button>
+        <div class="buttonRow">
+            <button id="start">Start</button>
+            <button id="pause">Pause</button>
+        </div>
+    
+        <label id="toggleBoxes">
+            Show Velocity <input type="checkbox" id="toggleVelocity" checked>
+        </label>
+        <label id="toggleBoxes">
+            Show Force <input type="checkbox" id="toggleForce" checked>
+        </label>
+    </div>
+
+    <canvas id="canvas"></canvas>
+
+    <script type="module" src="main.js"></script>
+</body>
+</html>
