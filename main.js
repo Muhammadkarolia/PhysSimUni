@@ -38,12 +38,19 @@ massInput.addEventListener("input", () => {
 // ==========================================================================
 
 
+// Func to change numBodies shown, called when item bodies is updated somehow
+function updateNumBodies() {
+    numBodiesDisplay.textContent = bodies.length;
+}
+
 // Start Pause Reset
 document.getElementById("start").onclick = () => running = true;
 document.getElementById("pause").onclick = () => running = false;
 document.getElementById("reset").onclick = () => {
     bodies = [];
+    updateNumBodies();
 };
+
 
 // ==========================================================================
 // Pos using Precice values
@@ -73,6 +80,8 @@ addBodyBtn.addEventListener("click", () => {
 
         const newBody = new Body(x, y, vx, vy, mass);
         bodies.push(newBody);
+        updateNumBodies();
+
 
         // previewBody = null;
     }
@@ -179,6 +188,7 @@ function handleCollisions() {
 
                 bodies.splice(j, 1);
                 j--; // important when removing from array
+                updateNumBodies();
             }
         }
     }
@@ -251,9 +261,10 @@ loop();
 
 
 // --------------------------------------------------------------------------------------
-// Adding objects LINKS TO creation mode
-canvas.addEventListener("mousedown", (e) => {
+// Adding objects LINKS TO creation mode, tf does this even mean
+const numBodiesDisplay = document.getElementById("numBodiesValue");
 
+canvas.addEventListener("mousedown", (e) => {
     if (creationMode !== "drag") return;
 
     const rect = canvas.getBoundingClientRect();
@@ -304,5 +315,5 @@ canvas.addEventListener("mouseup", () => {
     );
 
     bodies.push(newBody);
+    updateNumBodies();
 });
-
