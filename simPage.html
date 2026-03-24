@@ -22,11 +22,11 @@
             Precise Mode
         </label>
 
-        <label class="inputForAddBody">X:
+        <label class="inputForAddBody">X:&nbsp&nbsp
         <input type="number" id="posX" value="400">
         </label>
 
-        <label class="inputForAddBody">Y:
+        <label class="inputForAddBody">Y:&nbsp&nbsp
         <input type="number" id="posY" value="300">
         </label>
                 
@@ -42,25 +42,29 @@
 
 
         <label>Mass:
-        <input type="range" id="massSlider" min="1" max="200" value="20">
-        <input type="number" id="massInput" min="1" max="200" value="20">
-        </label>
-        
-        <label>
-            Show Velocity
-            <input type="checkbox" id="toggleVelocity" checked>
+            <div class="massStuff">
+                <input type="number" id="massInput" min="1" max="200" value="20">
+                <input type="range" id="massSlider" min="1" max="200" value="20">
+            </div>
         </label>
 
-        <label>
-            Show Force
-            <input type="checkbox" id="toggleForce" checked>
-        </label>
+        <div class="numBodiesContainer">
+            <label class="numBodies">Number of Bodies:&nbsp&nbsp <span id="numBodiesValue">0</span></label>
+        </div>
+
 
         <button id="reset">Reset</button>
         <div class="buttonRow">
             <button id="start">Start</button>
             <button id="pause">Pause</button>
         </div>
+    
+        <label id="toggleBoxes">
+            Show Velocity <input type="checkbox" id="toggleVelocity" checked>
+        </label>
+        <label id="toggleBoxes">
+            Show Force <input type="checkbox" id="toggleForce" checked>
+        </label>
     </div>
 
     <canvas id="canvas"></canvas>
