@@ -1,5 +1,5 @@
-import { Body } from "./body.js";
-import { computeForces } from "./physics.js";
+import { Body } from "./scriptBody.js";
+import { computeForces } from "./scriptPhysics.js";
 
 const canvas = document.getElementById("canvas");
 canvas.width = canvas.clientWidth;
