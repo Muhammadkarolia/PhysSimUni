@@ -22,7 +22,7 @@ body {
     margin: 20px;
     align-self: center;
     text-align: center;
-    background: rgba(255, 255, 255, 0.8);
+    background: rgba(255, 255, 255, 0.85);
     border-radius: 20px;
     padding: 10px;
 }
@@ -30,19 +30,20 @@ body {
 .contents {
     display: grid;
     grid-template-columns: 45% 45%;
-    grid-template-rows: auto;
     gap: 100px;
-
-    background: rgba(255, 255, 255, 0.8);
+    background: rgba(255, 255, 255, 0.85);
+    box-shadow: #333 0px 6px 10px;
     padding: 60px;
     border-radius: 20px;
     width: 98%;
     margin: 20px;
+    margin-bottom: 0px;
 }
 
-#features, #howItWorks {
+#features, #howItWorks, #designDec {
     padding: 20px 20px 20px 40px;
 }
+
 
 #featuresHeader {
     display: flex;
@@ -115,7 +116,9 @@ body {
 
 /* Button stuff end */
 
-/* Features design */
+h1, h2 { color: #333; }
+
+h1 { align-self: center; }
 
 #featuresContent {
     background-color: wheat;
@@ -125,8 +128,9 @@ body {
     width: 110%;
 }
 
-/* Fetures design End */
-
-h1, h2 { color: #333; }
-
-h1 { align-self: center; }
+#designDec {
+    grid-column: 1;
+    grid-row: 2;
+    margin-top: -25%;
+    padding-bottom: 0px;
+}
