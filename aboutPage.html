@@ -6,6 +6,43 @@
     <link rel="stylesheet" href="styleAboutPage.css">
 </head>
 <body>
+    <h1>About This Project</h1>
+
+    <p id="aboutParagraph">This application is a 2D N-body gravitational simulation that models the interaction between N amount of bodies using Newton's Law of Universal Gravitation. Users can create bodies interactively by dragging on the canvas or through precise input, and observe emergent behaviour in real time.</p>
+
+    <div class="contents">
+        
+        <div id="features">
+            <div id="featuresHeader">
+                <h2>Features</h2>
+                <div id="controls">
+                    <button id="back"> </button>
+                    <button id="forward"> </button>
+                </div>
+            </div>
+            <div id="featuresContent">
+                <p id = "creationMode">     <strong>Creation Modes:         </strong> The system supports both interactive and precise methods for defining initial conditions, allowing bodies to be created through direct manipulation or exact parameter specification.</p>
+                <p id = "massControl">      <strong>Mass Control:           </strong> Mass values can be dynamically configured, enabling exploration of how variations in mass influence gravitational interactions and system behaviour.</p>
+                <p id = "simControl">       <strong>Simulation Control:     </strong> The simulation provides real-time control over execution, including the ability to start, pause, reset, and monitor the current state of the system.</p>
+                <p id = "nBodySim">         <strong>N-Body Simulation:      </strong> Implements a real-time N-body system in which all bodies interact through gravitational forces, producing complex and emergent motion.</p>
+                <p id = "objCreation">      <strong>Object Creation:        </strong> Supports flexible object creation through both intuitive interaction and precise numerical input, enabling a wide range of experimental setups.</p>
+                <p id = "vecVis">           <strong>Vector Visualisation:   </strong> Displays velocity and net force vectors, providing insight into the dynamics and interactions between bodies.</p>
+                <p id = "collHandling">     <strong>Collision Handling:     </strong> Detects and resolves collisions between bodies through merging behaviour, conserving momentum within the system.</p>
+                <p id = "orbitalTrails">    <strong>Orbital Trails:         </strong> Renders motion trails for each body, allowing paths and orbital patterns to be visualised over time.</p>
+                <p id = "adjustableParams"> <strong>Adjustable Parameters:  </strong> Key simulation parameters can be modified, allowing experimentation with different conditions and observation of their effects.</p>
+            </div>   
+        </div>
+
+
+        <div id="howItWorks">
+            <h2>How It Works</h2>
+            <p>The simulation models gravitational interactions between multiple bodies using Newton's Law of Universal Gravitation, which states that every point mass attracts every other point mass with a force proportional to the product of their masses and inversely proportional to the square of the distance between them. Gravitational forces are calculated between all pairs of bodies and resolved into horizontal and vertical components. These forces are then used to update each body's velocity and position over time using Euler integration. A softening factor is applied to maintain numerical stability and prevent extreme forces at very small distances, allowing the system to produce smooth and continuous motion in real time.</p>
+        </div>
+
+    </div>
+
+    
+    <script type="module" src="aboutPage.js"></script>
 </body>
 
 </html>
