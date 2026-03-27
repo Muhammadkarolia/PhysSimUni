@@ -20,6 +20,21 @@ label, h1, h2, h3, button {
     color: white;
 }
 
+/* Header styles */
+.header {
+    grid-column: 1 / span 2;
+    justify-self: center;
+    margin-top: 0px;
+}
+
+#links {
+    display: flex;
+    justify-self: center;
+    gap: 50px;
+    margin-left: -30px;
+}
+
+
 /* Controls stuff start------------------------------- */
 
 .controls {
@@ -29,7 +44,7 @@ label, h1, h2, h3, button {
     grid-column: 1;
 
     width: 220px;
-    height: 840px;
+    height: 75%;
     margin-left: 5px;
 
     background: linear-gradient(90deg,rgba(255, 126, 78, 1) 50%, rgba(252, 69, 69, 1) 100%);
@@ -173,18 +188,12 @@ input::-webkit-inner-spin-button {
 /* Controls stuff End--------------------------------- */
 
 
-h1 {
-    grid-column: 1 / span 2;
-    justify-self: center;
-    margin: 20px 0;
-}
-
 canvas {
     background: black;
     border-color: white;
     border-width: 1px;
     width: 99%;
-    height: calc(100vh - 100px);
+    height: calc(100vh - 110px);
     grid-row: 2;
     grid-column: 2;
     justify-self: start;
