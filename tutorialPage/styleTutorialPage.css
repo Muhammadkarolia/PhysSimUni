@@ -1,0 +1,66 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #2b2f3a;
+    background: #f4f7fb;
+    margin: 0;
+    padding: 20px;
+}
+
+.pageContainer {
+    max-width: 980px;
+    margin: 0 auto;
+}
+
+/* Header styles */
+.header, .tryItNow{
+    background: #335dff;
+    color: white;
+    border-radius: 10px;
+    padding: 24px;
+    margin-bottom: 18px;
+    box-shadow: 0 8px 20px rgba(51, 93, 255, .24);
+}
+
+.header h1, .tryItNow h2 {
+    margin-top: 0px;
+}
+
+.openSimBtn {
+    display: inline-block;
+    background: #ffd600;
+    color: #1d2330;
+    text-decoration: none;
+    padding: 10px 16px;
+    border: 0;
+    border-radius: 6px;
+    font-weight: 700;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.16);
+}
+
+/* Page content styles */
+.stepCard{
+    background: white;
+    border-radius: 10px;
+    margin: 10px 0;
+    padding: 18px;
+    box-shadow: 0 8px 16px rgba(21, 27, 37, .08);
+    
+}
+
+.stepCard h2{
+    margin-top: 0;
+}
+
+/* Footer styles */
+.footer {
+    text-align: center;
+    color: #525f75;
+    font-size: 0.95rem;
+    margin-top: 1.2rem;
+}
+
+.footer a {
+    color: #335dff;
+    text-decoration: none;
+}
+
