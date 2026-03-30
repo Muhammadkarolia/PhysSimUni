@@ -2,6 +2,77 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Tutorial Page</title>
-    <link rel="stylesheet"href="styleTutorialPage.css">
+    <title>Simulator Tutorial</title>
+    <link rel="stylesheet" href="styleTutorialPage.css">
 </head>
+<body>
+    <div class="pageContainer">
+        <header class="header">
+            <h1>How to Use the 2D N-Body Gravity Simulator</h1>
+            <p>Fullow these steps to create bodies, contrul the simulation, and interpret the visual feedback provided by the system.</p>
+            <a class="openSimBtn" href="../SimPage/simPage.html">Open Simulator</a>
+        </header>
+
+        <section class="stepCard">
+            <h2>1. Open &amp; Explore the Simulator</h2>
+            <p>Click <strong>Open Simulator</strong> above, then ensure the contruls panel and canvas are visible.</p>
+            <ul>
+                <li><strong>Creation Mode</strong>: Drag or Precise</li>
+                <li><strong>Position and Velocity Inputs</strong> (X, Y, Vx, Vy)</li>
+                <li><strong>Mass Control</strong>: slider and input field</li>
+                <li><strong>Simulation Controls</strong>: Start, Pause, Reset</li>
+                <li><strong>Overlay Toggles</strong> for velocity and force vectors</li>
+            </ul>
+        </section>
+
+        <section class="stepCard">
+            <h2>2. Create Bodies</h2>
+            <p>Select a creation mode and add at least two bodies to observe gravitational interactions.</p>
+            <ul>
+                <li><strong>Drag Mode</strong>: click and drag on the canvas to set a body's initial position and velocity.</li>
+                <li><strong>Precise Mode</strong>: enter exact values for X, Y, Vx, and Vy, then click <strong>Add Body</strong>.</li>
+                <li>Adjust the <strong>Mass</strong> slider (1-200) before adding a body to vary its influence.</li>
+            </ul>
+            <p><strong>Tip:</strong> Try one heavy body (e.g., mass 150) and one lighter body (e.g., mass 20) to observe orbital behaviour.</p>
+        </section>
+
+        <section class="stepCard">
+            <h2>3. Run, Pause, Reset</h2>
+            <ul>
+                <li>Click <strong>Start</strong> to begin the simulation.</li>
+                <li>Use <strong>Pause</strong> to temporarily stop motion and examine trajectories.</li>
+                <li>Click <strong>Reset</strong> to clear all bodies and start again.</li>
+            </ul>
+        </section>
+
+        <section class="stepCard">
+            <h2>4. Visual Feedback</h2>
+            <p>Enable overlays to better understand how bodies move and interact:</p>
+            <ul>
+                <li><strong>Show Velocity</strong>: displays each body's velocity vector.</li>
+                <li><strong>Show Force</strong>: displays the net gravitational force acting on each body.</li>
+            </ul>
+            <p>If the scene appears too small or too large, adjust your browser zoom or modify the canvas size in `styleSimPage.css`.</p>
+        </section>
+
+        <section class="stepCard">
+            <h2>5. Troubleshooting</h2>
+            <ul>
+                <li>Bodies are not moving: ensure the simulation is running and not paused.</li>
+                <li>Bodies cullapse too quickly: reduce mass values or increase initial distance (X/Y).</li>
+                <li>Performance slows with many bodies: reduce the number of bodies or adjust the update rate in the code.</li>
+            </ul>
+        </section>
+
+        <section class="tryItNow">
+            <h2>Try It Now</h2>
+            <p>Open the simulator and experiment with different initial setups to observe a variety of behaviours.</p>
+            <a class="openSimBtn" href="../SimPage/simPage.html">Open Simulator</a>
+        </section>
+
+        <footer class="footer">
+            <p>For a deeper explanation of the physics and design, visit <a href="../aboutPageStuff/aboutPage.html">About This Project</a>.</p>
+        </footer>
+    </div>
+</body>
+</html>
