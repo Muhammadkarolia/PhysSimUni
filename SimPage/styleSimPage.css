@@ -45,7 +45,7 @@ label, h1, h2, h3, button {
     grid-column: 1;
 
     width: 220px;
-    height: 75%;
+    height: 85%;
     margin-left: 5px;
 
     background: linear-gradient(90deg,rgba(255, 126, 78, 1) 50%, rgba(252, 69, 69, 1) 100%);
@@ -192,7 +192,7 @@ input::-webkit-inner-spin-button {
 /* Controls stuff End--------------------------------- */
 
 
-canvas {
+#canvas {
     background: black;
     border-color: white;
     border-width: 1px;
@@ -201,4 +201,11 @@ canvas {
     grid-row: 2;
     grid-column: 2;
     justify-self: start;
+}
+
+/* overlay stuff --------------------------------------------------------------------------------------------------------------------------------------------*/
+
+.overlay {
+    display: none;
+    position: fixed;
 }

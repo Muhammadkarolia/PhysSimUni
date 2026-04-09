@@ -317,3 +317,13 @@ canvas.addEventListener("mouseup", () => {
     bodies.push(newBody);
     updateNumBodies();
 });
+
+// --------------------------------------------------------------------------------------
+// Walkthough stuff
+const walkThBtn = document.getElementById("walkThBtn");
+const overlay = document.getElementsByClassName("overlay");
+
+walkThBtn.addEventListener("click", () => {
+
+})
+
