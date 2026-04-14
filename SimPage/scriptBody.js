@@ -7,7 +7,7 @@ export class Body {
         this.mass = mass;
 
         this.trail = [];
-        this.maxTrailLength = 100; // adjust length here
+        this.maxTrailLength = 10000; // adjust length here
 
 
         this.fx = 0;
