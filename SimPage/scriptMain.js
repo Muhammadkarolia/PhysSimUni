@@ -365,3 +365,37 @@ close.addEventListener("click", () => {
     stepCompleted = false;
     Array.from(overlay).forEach(el => { el.style.display = "none"; el.classList.remove("active-overlay"); });
 });
+
+// ==========================================================================
+// Orbit Presets
+const orbitSimpleBtn = document.getElementById("orbitSimple");
+const orbitBinaryBtn = document.getElementById("orbitBinary");
+const orbitTripleBtn = document.getElementById("orbitTriple");
+
+function loadPreset(name) {
+    if (inWalkthrough) return; // Prevent preset loading during walkthrough
+    bodies = [];
+    running = false;
+    updateNumBodies();
+
+    if (name === "simple") {
+        // Sun at center, planet orbiting
+        bodies.push(new Body(600, 400, 0, 0, 100)); // Sun (massive, stationary)
+        bodies.push(new Body(700, 400, 0, -8, 5)); // Planet orbiting
+    } else if (name === "binary") {
+        // Two equal-mass stars orbiting each other
+        bodies.push(new Body(550, 400, 0, 5, 40)); // Star 1
+        bodies.push(new Body(650, 400, 0, -5, 40)); // Star 2
+    } else if (name === "triple") {
+        // Three bodies: large central body with two smaller ones
+        bodies.push(new Body(600, 400, 0, 0, 80)); // Central massive body
+        bodies.push(new Body(720, 400, 0, -7, 10)); // Outer planet 1
+        bodies.push(new Body(540, 360, 6, 0, 8)); // Outer planet 2
+    }
+
+    updateNumBodies();
+}
+
+orbitSimpleBtn.addEventListener("click", () => loadPreset("simple"));
+orbitBinaryBtn.addEventListener("click", () => loadPreset("binary"));
+orbitTripleBtn.addEventListener("click", () => loadPreset("triple"));
