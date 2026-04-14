@@ -213,6 +213,7 @@ input::-webkit-inner-spin-button {
     height: 100%;
     background-color: rgba(128, 128, 128, 0.5); /* grey tint */
     z-index: 10;
+    pointer-events: none; /* Allow clicks to pass through overlay */
 }
 
 /* Button overlay stuff */
@@ -227,6 +228,7 @@ input::-webkit-inner-spin-button {
     display: inline-flex;
     align-items: center;
     justify-content: center;
+    pointer-events: auto; /* Make buttons clickable */
 }
 
 #back::before, #forward::before {
@@ -275,6 +277,7 @@ input::-webkit-inner-spin-button {
     top: 5%;
     left: 45%;
     padding: 5px;
+    pointer-events: auto; /* Make button clickable */
 }
 
 /* Button overlay stuff end */
@@ -283,7 +286,7 @@ input::-webkit-inner-spin-button {
 #mainText {
     position: fixed;
     left: 50%;
-    top: 25%;
+    top: 40%;
     transform: translate(-50%, -50%);
     color: white;
     font-size: 1.5em;
