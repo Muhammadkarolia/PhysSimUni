@@ -45,7 +45,7 @@ label, h1, h2, h3, button {
     grid-column: 1;
 
     width: 220px;
-    height: 85%;
+    height: 95%;
     margin-left: 5px;
 
     background: linear-gradient(90deg,rgba(255, 126, 78, 1) 50%, rgba(252, 69, 69, 1) 100%);
@@ -163,6 +163,19 @@ input::-webkit-inner-spin-button {
     margin-top: 10px;
     font-size: 1.1em;
     
+}
+
+.numBodiesContainer {
+    position: fixed;
+    bottom: 25px;
+    left: 270px;
+    padding: 10px 15px;
+    border-radius: 5px;
+    z-index: 5;
+}
+
+.numBodiesContainer .numBodies {
+    margin-top: 0;
 }
 
 #toggleBoxes {
