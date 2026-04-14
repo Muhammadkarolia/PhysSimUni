@@ -319,21 +319,79 @@ canvas.addEventListener("mouseup", () => {
 });
 
 // --------------------------------------------------------------------------------------
-// Walkthough stuff
+// Walkthrough stuff
 const walkThBtn = document.getElementById("walkThBtn");
 const overlay = document.getElementsByClassName("overlay");
 const close = document.getElementById("close");
+const mainText = document.getElementById("mainText");
+const backBtn = document.getElementById("back");
+const forwardBtn = document.getElementById("forward");
+
+let currentStep = 0;
+
+const walkthroughSteps = [
+    {
+        title: "Welcome to the 2D N-Body Gravity Simulator",
+        text: "This simulator lets you create and observe gravitational systems in action. Bodies attract each other based on Newton's law of universal gravitation. Click the right arrow to learn how to use it!"
+    },
+    {
+        title: "Creating Bodies - Drag Mode",
+        text: "<strong>Drag Mode</strong> (currently selected) is the easiest way to create bodies:<br><br>1. Click and drag on the canvas to set position and initial velocity<br>2. The length of your drag determines the velocity magnitude<br>3. The mass is controlled by the slider on the left<br>4. Release to create the body"
+    },
+    {
+        title: "Creating Bodies - Precise Mode",
+        text: "<strong>Precise Mode</strong> allows exact control:<br><br>1. Select the 'Precise Mode' radio button<br>2. Enter exact X and Y coordinates<br>3. Set velocity components (Vx and Vy)<br>4. Adjust mass with the slider<br>5. Click 'Add Body' to create the body"
+    },
+    {
+        title: "Mass Control",
+        text: "The <strong>Mass</strong> slider controls the size and gravitational pull of new bodies:<br><br>• Higher mass = larger body size<br>• Higher mass = stronger gravitational attraction<br>• Adjust the slider or type a value directly in the input field<br>• Mass affects both visual size and physics calculations"
+    },
+    {
+        title: "Simulation Controls",
+        text: "<strong>Start / Pause / Reset</strong>:<br><br>• <strong>Start</strong> - Begin the simulation (bodies start moving)<br>• <strong>Pause</strong> - Pause the simulation<br>• <strong>Reset</strong> - Clear all bodies and start over<br><br>You can add bodies while paused or running!"
+    },
+    {
+        title: "Visualization Options",
+        text: "<strong>Show Velocity</strong> / <strong>Show Force</strong>:<br><br>• <strong>Velocity arrows</strong> - Shows the direction and magnitude of each body's motion<br>• <strong>Force arrows</strong> - Shows gravitational forces acting on each body<br><br>These help visualize the physics happening in real-time!"
+    },
+    {
+        title: "Understanding the Physics",
+        text: "Key concepts:<br><br>• <strong>Gravity</strong> - Bodies attract each other proportionally to their masses<br>• <strong>Orbits</strong> - Bodies can orbit each other if they have the right velocity<br>• <strong>Collisions</strong> - When bodies touch, they merge and conserve momentum<br>• <strong>Trails</strong> - Each body leaves a trail showing its path"
+    },
+    {
+        title: "Try It Out!",
+        text: "Now that you understand the basics:<br><br>1. Create a few bodies with different masses<br>2. Try clicking 'Start' to see gravity in action<br>3. Use both drag mode and precise mode<br>4. Toggle velocity and force visualization<br>5. Experiment with creating orbiting systems!<br><br>Have fun exploring gravitational systems!"
+    }
+];
+
+function updateWalkthroughDisplay() {
+    mainText.innerHTML = `<strong>${walkthroughSteps[currentStep].title}</strong><br>${walkthroughSteps[currentStep].text}`;
+}
 
 walkThBtn.addEventListener("click", () => {
+    currentStep = 0;
+    updateWalkthroughDisplay();
     for(var i = 0; i < overlay.length; i++) {
-        console.log(overlay[i]);
         overlay[i].style.display = "block";
     }
-})
+});
+
+backBtn.addEventListener("click", () => {
+    if (currentStep > 0) {
+        currentStep--;
+        updateWalkthroughDisplay();
+    }
+});
+
+forwardBtn.addEventListener("click", () => {
+    if (currentStep < walkthroughSteps.length - 1) {
+        currentStep++;
+        updateWalkthroughDisplay();
+    }
+});
 
 close.addEventListener("click", () => {
     for(var i = 0; i < overlay.length; i++) {
-        console.log(overlay[i]);
         overlay[i].style.display = "none";
     }
-})
+});
