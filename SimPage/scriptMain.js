@@ -322,8 +322,18 @@ canvas.addEventListener("mouseup", () => {
 // Walkthough stuff
 const walkThBtn = document.getElementById("walkThBtn");
 const overlay = document.getElementsByClassName("overlay");
+const close = document.getElementById("close");
 
 walkThBtn.addEventListener("click", () => {
-
+    for(var i = 0; i < overlay.length; i++) {
+        console.log(overlay[i]);
+        overlay[i].style.display = "block";
+    }
 })
 
+close.addEventListener("click", () => {
+    for(var i = 0; i < overlay.length; i++) {
+        console.log(overlay[i]);
+        overlay[i].style.display = "none";
+    }
+})
