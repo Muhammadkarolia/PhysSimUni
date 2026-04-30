@@ -52,6 +52,8 @@ const velXInput = document.getElementById("velX");
 const velYInput = document.getElementById("velY");
 const inputForAddBody = document.getElementsByClassName("inputForAddBody");
 const addBodyBtn = document.getElementById("addBody");
+const toggleVelocity = document.getElementById("toggleVelocity");
+const toggleForce = document.getElementById("toggleForce");
 
 // Hide precise-mode inputs by default (drag mode is the default)
 Array.from(inputForAddBody).forEach(el => el.style.display = "none");
@@ -176,17 +178,23 @@ function draw() {
     for (const body of bodies) {
         body.draw(ctx);
 
-        ctx.beginPath();
-        ctx.moveTo(body.x, body.y);
-        ctx.lineTo(body.x + body.vx * 5, body.y + body.vy * 5);
-        ctx.strokeStyle = "green";
-        ctx.stroke();
+        if (toggleVelocity.checked) {
+            ctx.beginPath();
+            ctx.moveTo(body.x, body.y);
+            ctx.lineTo(body.x + body.vx * 5, body.y + body.vy * 5);
+            ctx.strokeStyle = "green";
+            ctx.stroke();
+        }
 
-        ctx.beginPath();
-        ctx.moveTo(body.x, body.y);
-        ctx.lineTo(body.x + body.fx * 0.01, body.y + body.fy * 0.01);
-        ctx.strokeStyle = "red";
-        ctx.stroke();
+        if (toggleForce.checked) {
+            ctx.beginPath();
+            ctx.moveTo(body.x, body.y);
+            ctx.lineTo(body.x + body.fx * 0.05, body.y + body.fy * 0.05);
+            ctx.strokeStyle = "red";
+            ctx.lineWidth = 2;
+            ctx.stroke();
+            ctx.lineWidth = 1;
+        }
     }
 
     if (isDragging && creationMode === "drag") {
